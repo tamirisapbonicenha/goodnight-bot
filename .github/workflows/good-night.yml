@@ -1,0 +1,26 @@
+name: Boa noite
+
+on:
+  schedule:
+    # GitHub Actions uses UTC. 02:00 UTC is 23:00 in America/Sao_Paulo (UTC-3).
+    # Scheduled runs can start a few minutes late when GitHub is busy.
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  send-good-night:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Send good night message
+        run: npm start
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
