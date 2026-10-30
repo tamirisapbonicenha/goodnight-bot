@@ -1,6 +1,6 @@
 # goodnight-bot
 
-Script em Node.js que envia uma mensagem de boa noite pelo Telegram. O GitHub Actions roda todo dia às 23h no horário de Brasília.
+Script em Node.js que envia uma mensagem de boa noite pelo Telegram. O GitHub Actions roda a cada 5 minutos.
 
 ## Secrets
 
@@ -15,6 +15,6 @@ Para descobrir o chat id, mande uma mensagem para o bot e consulte `https://api.
 
 ## Horário
 
-O cron do Actions é em UTC. O workflow usa `0 2 * * *`, que corresponde a 23:00 em `America/Sao_Paulo` (UTC-3). O GitHub pode atrasar o disparo em alguns minutos.
+O workflow usa `*/5 * * * *`, então dispara a cada 5 minutos. O GitHub pode atrasar o disparo em alguns minutos.
 
 Também dá para disparar na hora em **Actions → Boa noite → Run workflow**.
