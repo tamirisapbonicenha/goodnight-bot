@@ -2,7 +2,7 @@
   "name": "goodnight-bot",
   "version": "1.0.0",
   "private": true,
-  "description": "Envia uma mensagem de boa noite no Telegram a cada 5 minutos.",
+  "description": "Envia uma mensagem de boa noite no Telegram todo dia à 1h no horário de Brasília.",
   "type": "module",
   "scripts": {
     "start": "node src/send-good-night.js"

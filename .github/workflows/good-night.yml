@@ -2,8 +2,9 @@ name: Boa noite
 
 on:
   schedule:
-    # Every 5 minutes. GitHub Actions cron is UTC and can start a few minutes late.
-    - cron: '*/5 * * * *'
+    # GitHub Actions uses UTC. 04:00 UTC is 01:00 in America/Sao_Paulo (UTC-3).
+    # Scheduled runs can start a few minutes late when GitHub is busy.
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
